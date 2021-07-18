@@ -1,7 +1,3 @@
-export AWS_PROFILE=default
-export export AWS_ACCESS_KEY_ID=AKIAZS3EPIIDYTT7JMAA
-export AWS_SECRET_ACCESS_KEY=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
-export AWS_DEFAULT_REGION=eu-west-1
 #!/usr/bin/env bash
 
 #########################################
