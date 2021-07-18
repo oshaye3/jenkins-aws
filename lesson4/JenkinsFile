@@ -1,59 +1,17 @@
+pipeline {
 
-#!/usr/bin/env bash
+  /*
+   * Run everything on an existing agent configured with a label 'jk-slave-agents'.
+   */
+  agent any
 
-#########################################
-
-# Capturing System Information
-
-###################################
-
-# define variable for information
-host_name=`hostname -f`
-date_report=`date`
-sleep 5s
-
-echo ""
-echo ""
-echo "-----------------------------------------------------------------------------------------------------------------------------------------------------"
-echo -e "list resources from below AWS services existing on the centrale acct locally $host_name as at $date_report"
-echo "-----------------------------------------------------------------------------------------------------------------------------------------------------"
-echo ""
-echo ""
-echo -e "VOLUMES:\t\t" 
-
-aws ec2 describe-volumes \
-    --filters Name=status,Values=available  --output table
-
-echo ""
-
-echo -e "VPCs:\t\t" 
-
-aws ec2 describe-vpcs  --output table
-
-echo ""
-echo -e "ORGANIZATION:\t\t" 
-
-aws organizations describe-organization  --output table
-echo ""
-echo -e "SUBNETS:\t\t" 
-
-aws ec2 describe-subnets  --output table
-echo ""
-echo -e "IAM USERS:\t\t" 
-
-aws iam list-users --profile default --output table
-echo ""
-echo -e "S3 BUCKETS:\t\t" 
-
-aws s3 ls --profile default --output table
-echo ""
-echo -e "EC2:\t\t" 
-
-aws ec2 describe-instances --output table
-echo ""
-
-echo -e "ROUTE 53 HOSTED ZONES:\t\t" 
-
-aws route53 list-hosted-zones --output table
-echo ""
-
+  stages {
+    stage('Building the Report for AWS Services') {
+      steps {
+        dir("./lesson4") {
+       sh '/jenkins-aws.sh'
+       
+        }
+      }
+    }
+  }
