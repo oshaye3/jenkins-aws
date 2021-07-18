@@ -9,7 +9,7 @@ pipeline {
     stage('Building the Report for AWS Services') {
       steps {
         dir("./lesson4") {
-       sh './lesson4/jenkins-aws.sh'
+       sh './jenkins-aws.sh'
        
         }
       }
