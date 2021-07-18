@@ -1,0 +1,760 @@
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+list resources from below AWS services existing on the centrale acct locally myhost as at Sun Jul 18 14:04:56 UTC 2021
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+VOLUMES:		
+---------------------------------------------------------
+|                    DescribeVolumes                    |
++-------------------------------------------------------+
+||                       Volumes                       ||
+|+---------------------+-------------------------------+|
+||  AvailabilityZone   |  eu-west-1b                   ||
+||  CreateTime         |  2021-06-29T09:13:41.581Z     ||
+||  Encrypted          |  False                        ||
+||  Iops               |  100                          ||
+||  Size               |  8                            ||
+||  SnapshotId         |  snap-0a428b9e3d753bd85       ||
+||  State              |  available                    ||
+||  VolumeId           |  vol-06b496304208548c4        ||
+||  VolumeType         |  gp2                          ||
+|+---------------------+-------------------------------+|
+|||                       Tags                        |||
+||+--------------------+------------------------------+||
+|||         Key        |            Value             |||
+||+--------------------+------------------------------+||
+|||  Managedby         |  Terraform                   |||
+|||  Name              |  ldap-ebs-pv-vol             |||
+||+--------------------+------------------------------+||
+||                       Volumes                       ||
+|+---------------------+-------------------------------+|
+||  AvailabilityZone   |  eu-west-1c                   ||
+||  CreateTime         |  2021-06-13T05:34:41.572Z     ||
+||  Encrypted          |  False                        ||
+||  Iops               |  100                          ||
+||  Size               |  8                            ||
+||  SnapshotId         |  snap-0452773bc494bcbbc       ||
+||  State              |  available                    ||
+||  VolumeId           |  vol-018b200d506f1f4a4        ||
+||  VolumeType         |  gp2                          ||
+|+---------------------+-------------------------------+|
+|||                       Tags                        |||
+||+----------------+----------------------------------+||
+|||  Key           |  Name                            |||
+|||  Value         |  wp-task-server                  |||
+||+----------------+----------------------------------+||
+||                       Volumes                       ||
+|+---------------------+-------------------------------+|
+||  AvailabilityZone   |  eu-west-1c                   ||
+||  CreateTime         |  2021-06-13T08:53:17.034Z     ||
+||  Encrypted          |  False                        ||
+||  Iops               |  100                          ||
+||  Size               |  8                            ||
+||  SnapshotId         |  snap-0452773bc494bcbbc       ||
+||  State              |  available                    ||
+||  VolumeId           |  vol-016c2b053424b7f8b        ||
+||  VolumeType         |  gp2                          ||
+|+---------------------+-------------------------------+|
+|||                       Tags                        |||
+||+-----------+---------------------------------------+||
+|||  Key      |  Name                                 |||
+|||  Value    |  cs-lamp-wp-deployer-node             |||
+||+-----------+---------------------------------------+||
+||                       Volumes                       ||
+|+---------------------+-------------------------------+|
+||  AvailabilityZone   |  eu-west-1c                   ||
+||  CreateTime         |  2021-06-13T18:42:30.850Z     ||
+||  Encrypted          |  False                        ||
+||  Iops               |  100                          ||
+||  Size               |  8                            ||
+||  SnapshotId         |  snap-0452773bc494bcbbc       ||
+||  State              |  available                    ||
+||  VolumeId           |  vol-0452956a2d659df7e        ||
+||  VolumeType         |  gp2                          ||
+|+---------------------+-------------------------------+|
+|||                       Tags                        |||
+||+-------+-------------------------------------------+||
+|||  Key  |  Name                                     |||
+|||  Value|  cs-manually-created-wp-server-monolith   |||
+||+-------+-------------------------------------------+||
+
+VPCs:		
+-----------------------------------------------------------
+|                      DescribeVpcs                       |
++---------------------------------------------------------+
+||                         Vpcs                          ||
+|+-----------------------+-------------------------------+|
+||  CidrBlock            |  10.10.0.0/16                 ||
+||  DhcpOptionsId        |  dopt-ad31ddc8                ||
+||  InstanceTenancy      |  default                      ||
+||  IsDefault            |  False                        ||
+||  State                |  available                    ||
+||  VpcId                |  vpc-0ff96bba8e588c79d        ||
+|+-----------------------+-------------------------------+|
+|||               CidrBlockAssociationSet               |||
+||+----------------+------------------------------------+||
+|||  AssociationId |  vpc-cidr-assoc-018171a9b662c5049  |||
+|||  CidrBlock     |  10.10.0.0/16                      |||
+||+----------------+------------------------------------+||
+||||                  CidrBlockState                   ||||
+|||+-------------------+-------------------------------+|||
+||||  State            |  associated                   ||||
+|||+-------------------+-------------------------------+|||
+|||                        Tags                         |||
+||+--------+--------------------------------------------+||
+|||  Key   |  Name                                      |||
+|||  Value |  dminds-shared-services-env-infra-vpc      |||
+||+--------+--------------------------------------------+||
+||                         Vpcs                          ||
+|+-----------------------+-------------------------------+|
+||  CidrBlock            |  192.168.0.0/16               ||
+||  DhcpOptionsId        |  dopt-ad31ddc8                ||
+||  InstanceTenancy      |  default                      ||
+||  IsDefault            |  False                        ||
+||  State                |  available                    ||
+||  VpcId                |  vpc-0e82695bfd0c584ed        ||
+|+-----------------------+-------------------------------+|
+|||               CidrBlockAssociationSet               |||
+||+----------------+------------------------------------+||
+|||  AssociationId |  vpc-cidr-assoc-0f7a9f6df6b9b3438  |||
+|||  CidrBlock     |  192.168.0.0/16                    |||
+||+----------------+------------------------------------+||
+||||                  CidrBlockState                   ||||
+|||+-------------------+-------------------------------+|||
+||||  State            |  associated                   ||||
+|||+-------------------+-------------------------------+|||
+|||                        Tags                         |||
+||+----------+------------------------------------------+||
+|||  Key     |  Name                                    |||
+|||  Value   |  dminds-staging-env-infra-vpc            |||
+||+----------+------------------------------------------+||
+||                         Vpcs                          ||
+|+-----------------------+-------------------------------+|
+||  CidrBlock            |  172.31.0.0/16                ||
+||  DhcpOptionsId        |  dopt-ad31ddc8                ||
+||  InstanceTenancy      |  default                      ||
+||  IsDefault            |  True                         ||
+||  State                |  available                    ||
+||  VpcId                |  vpc-0562e891a15ca211a        ||
+|+-----------------------+-------------------------------+|
+|||               CidrBlockAssociationSet               |||
+||+----------------+------------------------------------+||
+|||  AssociationId |  vpc-cidr-assoc-0fe86cd2f98a79036  |||
+|||  CidrBlock     |  172.31.0.0/16                     |||
+||+----------------+------------------------------------+||
+||||                  CidrBlockState                   ||||
+|||+-------------------+-------------------------------+|||
+||||  State            |  associated                   ||||
+|||+-------------------+-------------------------------+|||
+|||                        Tags                         |||
+||+-----------------------+-----------------------------+||
+|||  Key                  |  Name                       |||
+|||  Value                |  default                    |||
+||+-----------------------+-----------------------------+||
+||                         Vpcs                          ||
+|+-----------------------+-------------------------------+|
+||  CidrBlock            |  10.2.0.0/16                  ||
+||  DhcpOptionsId        |  dopt-ad31ddc8                ||
+||  InstanceTenancy      |  default                      ||
+||  IsDefault            |  False                        ||
+||  State                |  available                    ||
+||  VpcId                |  vpc-0da06b70c407306d4        ||
+|+-----------------------+-------------------------------+|
+|||               CidrBlockAssociationSet               |||
+||+----------------+------------------------------------+||
+|||  AssociationId |  vpc-cidr-assoc-0f3285dbe41d7cc50  |||
+|||  CidrBlock     |  10.2.0.0/16                       |||
+||+----------------+------------------------------------+||
+||||                  CidrBlockState                   ||||
+|||+-------------------+-------------------------------+|||
+||||  State            |  associated                   ||||
+|||+-------------------+-------------------------------+|||
+|||                        Tags                         |||
+||+---------+-------------------------------------------+||
+|||  Key    |  Name                                     |||
+|||  Value  |  dminds-monitoring-env-infra-vpc          |||
+||+---------+-------------------------------------------+||
+
+ORGANIZATION:		
+---------------------------------------------------------------------------------------------------
+|                                      DescribeOrganization                                       |
++-------------------------------------------------------------------------------------------------+
+||                                         Organization                                          ||
+|+--------------------+--------------------------------------------------------------------------+|
+||  Arn               |  arn:aws:organizations::658951324167:organization/o-a3yt5djiy5           ||
+||  FeatureSet        |  ALL                                                                     ||
+||  Id                |  o-a3yt5djiy5                                                            ||
+||  MasterAccountArn  |  arn:aws:organizations::658951324167:account/o-a3yt5djiy5/658951324167   ||
+||  MasterAccountEmail|  phelun@yahoo.com                                                        ||
+||  MasterAccountId   |  658951324167                                                            ||
+|+--------------------+--------------------------------------------------------------------------+|
+|||                                    AvailablePolicyTypes                                     |||
+||+------------------------+--------------------------------------------------------------------+||
+|||  Status                |  ENABLED                                                           |||
+|||  Type                  |  SERVICE_CONTROL_POLICY                                            |||
+||+------------------------+--------------------------------------------------------------------+||
+
+SUBNETS:		
+---------------------------------------------------------------
+|                       DescribeSubnets                       |
++-------------------------------------------------------------+
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.2.1.0/24               ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0f684eec4f4bff369  ||
+||  VpcId                       |  vpc-0da06b70c407306d4     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+--------+------------------------------------------------+||
+|||  Key   |  Name                                          |||
+|||  Value |  dminds-monitoring-env-infra-vpc-priv-0        |||
+||+--------+------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.10.7.0/24              ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-034d36b4cdcb0c3eb  ||
+||  VpcId                       |  vpc-0ff96bba8e588c79d     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+--------+------------------------------------------------+||
+|||  Key   |  Name                                          |||
+|||  Value |  dminds-shared-services-env-infra-vpc-pub-2    |||
+||+--------+------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  192.168.5.0/24            ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-08eba39c6ffef0000  ||
+||  VpcId                       |  vpc-0e82695bfd0c584ed     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-staging-env-infra-vpc-pub-0           |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.10.2.0/24              ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-08cfd489b5737a607  ||
+||  VpcId                       |  vpc-0ff96bba8e588c79d     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+-------+-------------------------------------------------+||
+|||  Key  |  Name                                           |||
+|||  Value|  dminds-shared-services-env-infra-vpc-priv-1    |||
+||+-------+-------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.10.6.0/24              ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-002a4dcbbd60c8426  ||
+||  VpcId                       |  vpc-0ff96bba8e588c79d     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+--------+------------------------------------------------+||
+|||  Key   |  Name                                          |||
+|||  Value |  dminds-shared-services-env-infra-vpc-pub-1    |||
+||+--------+------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.10.1.0/24              ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0fc2b086309abe8a1  ||
+||  VpcId                       |  vpc-0ff96bba8e588c79d     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+-------+-------------------------------------------------+||
+|||  Key  |  Name                                           |||
+|||  Value|  dminds-shared-services-env-infra-vpc-priv-0    |||
+||+-------+-------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.2.7.0/24               ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0611e58abefb33964  ||
+||  VpcId                       |  vpc-0da06b70c407306d4     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-monitoring-env-infra-vpc-pub-2        |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.2.6.0/24               ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-09fc9ca18b613aa26  ||
+||  VpcId                       |  vpc-0da06b70c407306d4     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-monitoring-env-infra-vpc-pub-1        |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  4091                      ||
+||  CidrBlock                   |  172.31.32.0/20            ||
+||  DefaultForAz                |  True                      ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-08cc7694c91abab95  ||
+||  VpcId                       |  vpc-0562e891a15ca211a     ||
+|+------------------------------+----------------------------+|
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  250                       ||
+||  CidrBlock                   |  10.10.5.0/24              ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0678f2ebc885430c1  ||
+||  VpcId                       |  vpc-0ff96bba8e588c79d     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+--------+------------------------------------------------+||
+|||  Key   |  Name                                          |||
+|||  Value |  dminds-shared-services-env-infra-vpc-pub-0    |||
+||+--------+------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  4091                      ||
+||  CidrBlock                   |  172.31.0.0/20             ||
+||  DefaultForAz                |  True                      ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0f40119e51b0ca0fb  ||
+||  VpcId                       |  vpc-0562e891a15ca211a     ||
+|+------------------------------+----------------------------+|
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  192.168.3.0/24            ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-025412207752eee8f  ||
+||  VpcId                       |  vpc-0e82695bfd0c584ed     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-staging-env-infra-vpc-priv-2          |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  192.168.6.0/24            ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-07e36471fbdbcce78  ||
+||  VpcId                       |  vpc-0e82695bfd0c584ed     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-staging-env-infra-vpc-pub-1           |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.2.5.0/24               ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0cae59916b546814d  ||
+||  VpcId                       |  vpc-0da06b70c407306d4     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-monitoring-env-infra-vpc-pub-0        |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.2.2.0/24               ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-04648a5241c0af859  ||
+||  VpcId                       |  vpc-0da06b70c407306d4     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+--------+------------------------------------------------+||
+|||  Key   |  Name                                          |||
+|||  Value |  dminds-monitoring-env-infra-vpc-priv-1        |||
+||+--------+------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1b                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  192.168.2.0/24            ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0e9d336f952db6095  ||
+||  VpcId                       |  vpc-0e82695bfd0c584ed     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-staging-env-infra-vpc-priv-1          |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  192.168.1.0/24            ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0112df9bb21641aef  ||
+||  VpcId                       |  vpc-0e82695bfd0c584ed     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-staging-env-infra-vpc-priv-0          |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.10.3.0/24              ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0f25a38b653577b84  ||
+||  VpcId                       |  vpc-0ff96bba8e588c79d     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+-------+-------------------------------------------------+||
+|||  Key  |  Name                                           |||
+|||  Value|  dminds-shared-services-env-infra-vpc-priv-2    |||
+||+-------+-------------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  192.168.7.0/24            ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0692e78138876ca1b  ||
+||  VpcId                       |  vpc-0e82695bfd0c584ed     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+---------+-----------------------------------------------+||
+|||  Key    |  Name                                         |||
+|||  Value  |  dminds-staging-env-infra-vpc-pub-2           |||
+||+---------+-----------------------------------------------+||
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1a                ||
+||  AvailableIpAddressCount     |  4091                      ||
+||  CidrBlock                   |  172.31.16.0/20            ||
+||  DefaultForAz                |  True                      ||
+||  MapPublicIpOnLaunch         |  True                      ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-01dc2dcca6d90c9bd  ||
+||  VpcId                       |  vpc-0562e891a15ca211a     ||
+|+------------------------------+----------------------------+|
+||                          Subnets                          ||
+|+------------------------------+----------------------------+|
+||  AssignIpv6AddressOnCreation |  False                     ||
+||  AvailabilityZone            |  eu-west-1c                ||
+||  AvailableIpAddressCount     |  251                       ||
+||  CidrBlock                   |  10.2.3.0/24               ||
+||  DefaultForAz                |  False                     ||
+||  MapPublicIpOnLaunch         |  False                     ||
+||  State                       |  available                 ||
+||  SubnetId                    |  subnet-0583b7a13d46c1a18  ||
+||  VpcId                       |  vpc-0da06b70c407306d4     ||
+|+------------------------------+----------------------------+|
+|||                          Tags                           |||
+||+--------+------------------------------------------------+||
+|||  Key   |  Name                                          |||
+|||  Value |  dminds-monitoring-env-infra-vpc-priv-2        |||
+||+--------+------------------------------------------------+||
+
+IAM USERS:		
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                                     ListUsers                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+||                                                                                      Users                                                                                     ||
+|+--------------------------------------------------------------+-----------------------+-----------------------+-------+------------------------+--------------------------------+|
+||                              Arn                             |      CreateDate       |   PasswordLastUsed    | Path  |        UserId          |           UserName             ||
+|+--------------------------------------------------------------+-----------------------+-----------------------+-------+------------------------+--------------------------------+|
+||  arn:aws:iam::658951324167:user/admin                        |  2020-04-21T22:49:51Z |  2021-07-18T08:06:10Z |  /    |  AIDAZS3EPIIDWNV5I4JEB |  admin                         ||
+||  arn:aws:iam::658951324167:user/amina                        |  2020-05-02T17:05:11Z |                       |  /    |  AIDAZS3EPIIDVRT6VSY7Z |  amina                         ||
+||  arn:aws:iam::658951324167:user/bayo                         |  2021-07-04T07:45:43Z |  2021-07-14T01:33:48Z |  /    |  AIDAZS3EPIID2QKX3OZYL |  bayo                          ||
+||  arn:aws:iam::658951324167:user/benjamin                     |  2020-05-02T17:05:11Z |                       |  /    |  AIDAZS3EPIID25UGZWFFS |  benjamin                      ||
+||  arn:aws:iam::658951324167:user/cert-manager-dns-issuer-user |  2021-06-26T21:32:40Z |                       |  /    |  AIDAZS3EPIID32OEC5WVH |  cert-manager-dns-issuer-user  ||
+||  arn:aws:iam::658951324167:user/christian                    |  2020-05-02T17:05:13Z |                       |  /    |  AIDAZS3EPIID2DRQMTUO6 |  christian                     ||
+||  arn:aws:iam::658951324167:user/cj                           |  2020-05-02T17:05:11Z |                       |  /    |  AIDAZS3EPIIDYJRH67SXQ |  cj                            ||
+||  arn:aws:iam::658951324167:user/developer                    |  2021-03-15T20:15:37Z |  2021-03-16T04:08:11Z |  /    |  AIDAZS3EPIIDWR2YNXM5T |  developer                     ||
+||  arn:aws:iam::658951324167:user/eks-deployer                 |  2021-06-25T11:47:54Z |                       |  /    |  AIDAZS3EPIIDUNEDFWTLY |  eks-deployer                  ||
+||  arn:aws:iam::658951324167:user/fola                         |  2020-05-02T17:05:12Z |                       |  /    |  AIDAZS3EPIIDR5UDNTOK6 |  fola                          ||
+||  arn:aws:iam::658951324167:user/igie                         |  2021-07-04T08:02:53Z |  2021-07-10T20:17:36Z |  /    |  AIDAZS3EPIID6SD2CWFGK |  igie                          ||
+||  arn:aws:iam::658951324167:user/infra-creds                  |  2021-01-14T20:33:04Z |                       |  /    |  AIDAZS3EPIID34JFQLMGG |  infra-creds                   ||
+||  arn:aws:iam::658951324167:user/iuri                         |  2021-07-04T07:45:43Z |  2021-07-17T21:19:36Z |  /    |  AIDAZS3EPIID5H36YV25C |  iuri                          ||
+||  arn:aws:iam::658951324167:user/jenkins_slave_sa             |  2021-07-09T06:51:36Z |                       |  /    |  AIDAZS3EPIIDRHATVZY5C |  jenkins_slave_sa              ||
+||  arn:aws:iam::658951324167:user/jtmoney                      |  2020-11-09T21:09:30Z |                       |  /    |  AIDAZS3EPIIDWGTHG2VN6 |  jtmoney                       ||
+||  arn:aws:iam::658951324167:user/jtotugo                      |  2021-01-30T22:06:08Z |                       |  /    |  AIDAZS3EPIIDTDMAY4TWU |  jtotugo                       ||
+||  arn:aws:iam::658951324167:user/kunle                        |  2021-07-04T08:02:53Z |  2021-07-13T17:16:09Z |  /    |  AIDAZS3EPIID2EHKCSHPF |  kunle                         ||
+||  arn:aws:iam::658951324167:user/ludix                        |  2021-02-21T00:19:36Z |  2021-07-18T08:23:54Z |  /    |  AIDAZS3EPIID76JJBRDRV |  ludix                         ||
+||  arn:aws:iam::658951324167:user/michael                      |  2021-07-04T08:02:53Z |  2021-07-17T18:23:57Z |  /    |  AIDAZS3EPIID7HX62KOHW |  michael                       ||
+||  arn:aws:iam::658951324167:user/mikel                        |  2020-05-02T17:05:11Z |                       |  /    |  AIDAZS3EPIID2FLC4N2RC |  mikel                         ||
+||  arn:aws:iam::658951324167:user/monday                       |  2021-01-30T22:06:08Z |                       |  /    |  AIDAZS3EPIIDQ7MSPF4H2 |  monday                        ||
+||  arn:aws:iam::658951324167:user/najeem                       |  2021-07-18T08:10:58Z |                       |  /    |  AIDAZS3EPIID4XVB7EXHR |  najeem                        ||
+||  arn:aws:iam::658951324167:user/olan                         |  2021-07-13T12:02:50Z |  2021-07-16T12:04:15Z |  /    |  AIDAZS3EPIIDWYUWH64FJ |  olan                          ||
+||  arn:aws:iam::658951324167:user/poweruser                    |  2020-04-26T09:09:59Z |  2020-04-27T19:57:08Z |  /    |  AIDAZS3EPIIDSAQ4ZIEJM |  poweruser                     ||
+||  arn:aws:iam::658951324167:user/seun                         |  2020-05-02T17:05:13Z |                       |  /    |  AIDAZS3EPIID7A5SGBRFQ |  seun                          ||
+||  arn:aws:iam::658951324167:user/seun02                       |  2021-07-04T08:02:53Z |                       |  /    |  AIDAZS3EPIID6NGGH6PPY |  seun02                        ||
+||  arn:aws:iam::658951324167:user/seun_ng                      |  2021-01-30T22:06:08Z |                       |  /    |  AIDAZS3EPIID5OKWALBBM |  seun_ng                       ||
+||  arn:aws:iam::658951324167:user/tunde                        |  2021-07-04T07:45:43Z |  2021-07-17T14:02:50Z |  /    |  AIDAZS3EPIIDTFMSY2MB3 |  tunde                         ||
+||  arn:aws:iam::658951324167:user/uche                         |  2020-05-02T17:05:12Z |                       |  /    |  AIDAZS3EPIID7F4RIA6MI |  uche                          ||
+||  arn:aws:iam::658951324167:user/yemi                         |  2020-05-02T17:05:11Z |                       |  /    |  AIDAZS3EPIIDU3HITX52Z |  yemi                          ||
+|+--------------------------------------------------------------+-----------------------+-----------------------+-------+------------------------+--------------------------------+|
+
+S3 BUCKETS:		
+2020-12-06 18:10:34 all-my-react-2020-19
+2020-12-16 07:51:56 aws-athena-query-results-eu-west-1-658951324167
+2021-07-07 11:53:06 bash-awscli-created-bucket-this-dev
+2021-07-07 11:53:09 bash-awscli-created-bucket-this-production
+2021-07-07 11:53:11 bash-awscli-created-bucket-this-staging
+2021-07-07 11:54:20 bash-bucket-testin-rules-now-2021-dev
+2021-07-07 11:54:22 bash-bucket-testin-rules-now-2021-production
+2021-07-07 11:54:25 bash-bucket-testin-rules-now-2021-staging
+2021-02-28 05:22:31 benji-store
+2020-05-02 18:00:37 centrale-accts-org-store
+2020-12-15 19:49:25 cf-templates-6kkbscguzj93-eu-west-1
+2021-02-22 00:07:20 cjokafor-store
+2021-01-21 12:40:01 dminds-centrale-cost-bucket
+2021-03-04 00:13:10 dminds-prep-dev-8475749
+2021-02-21 14:26:33 fola-bucket
+2021-05-26 22:00:42 globo-development-94902
+2021-02-22 12:10:02 jto911-repo
+2020-07-04 00:18:35 me-icp-bin
+2021-03-04 02:15:31 mic-app
+2021-02-22 00:01:58 monday-store
+2020-06-24 13:50:40 nasha-icp-312
+2021-02-21 09:38:01 oa234
+2021-02-21 12:06:29 oa275-repo
+2021-02-22 08:24:23 seun-ng-bucket
+2021-02-21 16:50:47 seunf
+2021-03-01 12:40:48 sherif-assignment9
+2021-02-22 18:02:53 skz-store
+2020-04-29 22:24:13 state-centrale-tg-global-org-state-eu-west-1
+2020-05-30 21:47:23 team-london-bucket-lesson-ten-wip
+2021-02-27 14:01:30 teamlondon-task9
+2021-02-25 16:48:12 teamparis-shopizer
+2021-05-07 10:54:40 terraform-tfstate-658951324167
+2021-02-22 09:55:52 uche-bucket
+2020-06-25 05:00:30 vpc-states
+2020-12-06 20:21:15 yb-dashboard-development-5592348
+2021-02-22 14:08:36 yemi-store
+
+EC2:		
+-------------------------------------------------------------------------------------
+|                                 DescribeInstances                                 |
++-----------------------------------------------------------------------------------+
+||                                  Reservations                                   ||
+|+---------------------------------+-----------------------------------------------+|
+||  OwnerId                        |  658951324167                                 ||
+||  ReservationId                  |  r-0e9d9ad054f009d1a                          ||
+|+---------------------------------+-----------------------------------------------+|
+|||                                   Instances                                   |||
+||+------------------------+------------------------------------------------------+||
+|||  AmiLaunchIndex        |  0                                                   |||
+|||  Architecture          |  x86_64                                              |||
+|||  ClientToken           |  21D61F00-BA18-4F5C-AD28-3B2B435E54A4                |||
+|||  EbsOptimized          |  False                                               |||
+|||  EnaSupport            |  True                                                |||
+|||  Hypervisor            |  xen                                                 |||
+|||  ImageId               |  ami-0a5e8ca917c895b48                               |||
+|||  InstanceId            |  i-0fc30309fb6f58cca                                 |||
+|||  InstanceType          |  t3a.large                                           |||
+|||  KeyName               |  centrale-keys                                       |||
+|||  LaunchTime            |  2021-07-05T13:55:41.000Z                            |||
+|||  PrivateDnsName        |  ip-10-10-5-32.eu-west-1.compute.internal            |||
+|||  PrivateIpAddress      |  10.10.5.32                                          |||
+|||  PublicDnsName         |  ec2-34-252-248-114.eu-west-1.compute.amazonaws.com  |||
+|||  PublicIpAddress       |  34.252.248.114                                      |||
+|||  RootDeviceName        |  /dev/sda1                                           |||
+|||  RootDeviceType        |  ebs                                                 |||
+|||  SourceDestCheck       |  True                                                |||
+|||  StateTransitionReason |                                                      |||
+|||  SubnetId              |  subnet-0678f2ebc885430c1                            |||
+|||  VirtualizationType    |  hvm                                                 |||
+|||  VpcId                 |  vpc-0ff96bba8e588c79d                               |||
+||+------------------------+------------------------------------------------------+||
+||||                             BlockDeviceMappings                             ||||
+|||+---------------------------------------+-------------------------------------+|||
+||||  DeviceName                           |  /dev/sda1                          ||||
+|||+---------------------------------------+-------------------------------------+|||
+|||||                                    Ebs                                    |||||
+||||+---------------------------------+-----------------------------------------+||||
+|||||  AttachTime                     |  2021-07-05T13:55:42.000Z               |||||
+|||||  DeleteOnTermination            |  False                                  |||||
+|||||  Status                         |  attached                               |||||
+|||||  VolumeId                       |  vol-0cd864485011bfdcb                  |||||
+||||+---------------------------------+-----------------------------------------+||||
+||||                                 Monitoring                                  ||||
+|||+--------------------------------+--------------------------------------------+|||
+||||  State                         |  disabled                                  ||||
+|||+--------------------------------+--------------------------------------------+|||
+||||                              NetworkInterfaces                              ||||
+|||+------------------------+----------------------------------------------------+|||
+||||  Description           |                                                    ||||
+||||  MacAddress            |  06:50:61:3e:3d:ed                                 ||||
+||||  NetworkInterfaceId    |  eni-06645f3df7f117858                             ||||
+||||  OwnerId               |  658951324167                                      ||||
+||||  PrivateDnsName        |  ip-10-10-5-32.eu-west-1.compute.internal          ||||
+||||  PrivateIpAddress      |  10.10.5.32                                        ||||
+||||  SourceDestCheck       |  True                                              ||||
+||||  Status                |  in-use                                            ||||
+||||  SubnetId              |  subnet-0678f2ebc885430c1                          ||||
+||||  VpcId                 |  vpc-0ff96bba8e588c79d                             ||||
+|||+------------------------+----------------------------------------------------+|||
+|||||                                Association                                |||||
+||||+----------------+----------------------------------------------------------+||||
+|||||  IpOwnerId     |  amazon                                                  |||||
+|||||  PublicDnsName |  ec2-34-252-248-114.eu-west-1.compute.amazonaws.com      |||||
+|||||  PublicIp      |  34.252.248.114                                          |||||
+||||+----------------+----------------------------------------------------------+||||
+|||||                                Attachment                                 |||||
+||||+------------------------------+--------------------------------------------+||||
+|||||  AttachTime                  |  2021-07-05T13:55:41.000Z                  |||||
+|||||  AttachmentId                |  eni-attach-0bc6a67241098753a              |||||
+|||||  DeleteOnTermination         |  True                                      |||||
+|||||  DeviceIndex                 |  0                                         |||||
+|||||  Status                      |  attached                                  |||||
+||||+------------------------------+--------------------------------------------+||||
+|||||                                  Groups                                   |||||
+||||+-------------------+-------------------------------------------------------+||||
+|||||  GroupId          |  sg-01256a7a49ea6bf6c                                 |||||
+|||||  GroupName        |  management-node-shared-services                      |||||
+||||+-------------------+-------------------------------------------------------+||||
+|||||                            PrivateIpAddresses                             |||||
+||||+----------------------+----------------------------------------------------+||||
+|||||  Primary             |  True                                              |||||
+|||||  PrivateDnsName      |  ip-10-10-5-32.eu-west-1.compute.internal          |||||
+|||||  PrivateIpAddress    |  10.10.5.32                                        |||||
+||||+----------------------+----------------------------------------------------+||||
+||||||                               Association                               ||||||
+|||||+----------------+--------------------------------------------------------+|||||
+||||||  IpOwnerId     |  amazon                                                ||||||
+||||||  PublicDnsName |  ec2-34-252-248-114.eu-west-1.compute.amazonaws.com    ||||||
+||||||  PublicIp      |  34.252.248.114                                        ||||||
+|||||+----------------+--------------------------------------------------------+|||||
+||||                                  Placement                                  ||||
+|||+--------------------------------------------+--------------------------------+|||
+||||  AvailabilityZone                          |  eu-west-1a                    ||||
+||||  GroupName                                 |                                ||||
+||||  Tenancy                                   |  default                       ||||
+|||+--------------------------------------------+--------------------------------+|||
+||||                                ProductCodes                                 ||||
+|||+-----------------------------+-----------------------------------------------+|||
+||||  ProductCodeId              |  aw0evgkw8e5c1q413zgy5pjce                    ||||
+||||  ProductCodeType            |  marketplace                                  ||||
+|||+-----------------------------+-----------------------------------------------+|||
+||||                               SecurityGroups                                ||||
+|||+-------------------+---------------------------------------------------------+|||
+||||  GroupId          |  sg-01256a7a49ea6bf6c                                   ||||
+||||  GroupName        |  management-node-shared-services                        ||||
+|||+-------------------+---------------------------------------------------------+|||
+||||                                    State                                    ||||
+|||+-------------------------------+---------------------------------------------+|||
+||||  Code                         |  16                                         ||||
+||||  Name                         |  running                                    ||||
+|||+-------------------------------+---------------------------------------------+|||
+||||                                    Tags                                     ||||
+|||+-----------+-----------------------------------------------------------------+|||
+||||  Key      |  Name                                                           ||||
+||||  Value    |  cs-management-node-jenkins-nodejs-bastion                      ||||
+|||+-----------+-----------------------------------------------------------------+|||
+
+ROUTE 53 HOSTED ZONES:		
+----------------------------------------------------------------------
+|                           ListHostedZones                          |
++--------------------------------------------------------------------+
+||                            HostedZones                           ||
+|+-------------------------+----------------------------------------+|
+||  CallerReference        |  1F248C98-AE47-8172-8CCC-99416FF07D12  ||
+||  Id                     |  /hostedzone/Z5RQB0SCHMM4M             ||
+||  Name                   |  brexit4u.com.                         ||
+||  ResourceRecordSetCount |  11                                    ||
+|+-------------------------+----------------------------------------+|
+|||                             Config                             |||
+||+---------------------------------------+------------------------+||
+|||  Comment                              |  k8s                   |||
+|||  PrivateZone                          |  False                 |||
+||+---------------------------------------+------------------------+||
+
