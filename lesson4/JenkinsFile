@@ -1,19 +1,125 @@
+
 pipeline {
-
-  /*
-   * Run everything on an existing agent configured with a label 'jk-slave-agents'.
-   */
-  agent any
-
-  stages {
-    stage('Building the Report for AWS Services') {
-      steps {
-        dir("./lesson4") {
-       sh './jenkins-aws.sh'
-       
-        }
-      }
+    agent any
+    parameters {
+        choice(name: 'SELECT_ALL', choices: ['No', 'Yes'], description: 'Do you want run all services') 
+        booleanParam(name: 'VPC')
+        booleanParam(name: 'ORGARNIZATION')
+        booleanParam(name: 'SUBNETS')
+        booleanParam(name: 'IAM')
+        booleanParam(name: 'S3_BUCKETS')
+        booleanParam(name: 'EC2')
+        booleanParam(name: 'ROUTE53_HOSTED_ZONES') 
+        choice(name: 'CREATE_REPORT', choices: ['No', 'Yes'], description: 'Do you want to create a text report on the serrver')
+   
     }
+    stages {
+        stage('SampleParamStage') {
+            steps {
+			  echo "Select all services ?: ${params.SELECT_ALL}"
+                echo "Select the services you want to run the report"
+       
+                echo "Select VPC service ?: ${params.VPC}"
+                echo "Select ORGARNIZATION service ?: ${params.ORGARNIZATION}"
+                echo "Select SUBNETS service ?: ${params.SUBNETS}"
+                echo "Select IAM service ?: ${params.IAM}"
+                echo "Select S3_BUCKETS service ?: ${params.S3_BUCKETS}"
+                echo "Select EC2 service ?: ${params.EC2}"
+               echo "Select ROUTE53_HOSTED_ZONES ?: ${params.ROUTE53_HOSTED_ZONES}"
+               
+                echo "Create a text report: ${params.CREATE_REPORT}"
+       
+
   }
-  
-  }
+        }
+    
+
+   
+        stage('Execute All Services') {
+            steps {
+        
+           script {
+                    def all = "${params.SELECT_ALL}"
+					def create = "${params.CREATE_REPORT}"
+                    
+                    if(all == "Yes"  && create == "No" ) {
+                        echo "You select to run all services"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+                      ./jenkins-aws.sh 
+                     exit
+                        """
+       
+                               }
+                      } 
+ 
+                else if(all == "Yes"  && create == "Yes" ) {
+                        echo "You select to run all services"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+                      ./jenkins-aws.sh > report-aws.log
+                          exit
+                            """
+       
+                               }
+                      } 
+ 
+ 
+ }     
+           
+        }
+    
+	
+	}
+
+
+        stage('Optional Services selected') {
+            steps {
+        
+           script {
+                    def vpc = "${params.VPC}"
+					def create = "${params.CREATE_REPORT}"
+                    
+                    if(vpc == 'true'  && create == "No" ) {
+                        echo "You select to run VPC"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+                       echo -e "VPCs:\t\t" 
+
+                    aws ec2 describe-vpcs  --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(vpc == 'true'  && create == "No" ) {
+                        echo "You select to run VPC"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+                      echo -e "VPCs:\t\t" 
+
+                    aws ec2 describe-vpcs  --output table
+           
+                            """
+       
+                               }
+                      } 
+ 
+ 
+ }     
+          
+
+ 
+        }
+    
+	
+	}	
+	
+	}
+
+}
