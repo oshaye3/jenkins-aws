@@ -80,6 +80,12 @@ pipeline {
         
            script {
                     def vpc = "${params.VPC}"
+					def org = "${params.ORGARNIZATION}"
+					def subnet = "${params.SUBNETS}"
+					def iamuser = "${params.IAM}"
+					def s3b = "${params.S3_BUCKETS}"
+					def ec2_instance= "${params.EC2}"
+					def route53 = "${params.ROUTE53_HOSTED_ZONES}"
 					def create = "${params.CREATE_REPORT}"
                     
                     if(vpc == 'true'  && create == "No" ) {
@@ -96,14 +102,199 @@ pipeline {
                                }
                       } 
  
-                else if(vpc == 'true'  && create == "No" ) {
+                else if(vpc == 'true'  && create == "Yes" ) {
                         echo "You select to run VPC"
                                dir("./lesson4") {
                           
 						    sh """                         
-                      echo -e "VPCs:\t\t" 
+                      echo -e "VPCs:\t\t"   >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
 
-                    aws ec2 describe-vpcs  --output table
+                    aws ec2 describe-vpcs  --output table  >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+           
+                            """
+       
+                               }
+                      } 
+ 
+   if(org == 'true'  && create == "No" ) {
+                        echo "You select to run ORGANANIZATION"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+                      echo ""
+         echo -e "ORGANIZATION:\t\t" 
+
+              aws organizations describe-organization  --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(org == 'true'  && create == "Yes" ) {
+                        echo "You select to run ORGARNIZATION"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+                     echo ""
+echo -e "ORGANIZATION:\t\t"    >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+
+aws organizations describe-organization  --output table  >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+           
+                            """
+       
+                               }
+                      } 
+
+if(subnet == 'true'  && create == "No" ) {
+                        echo "You select to run SUBNETS"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "SUBNETS:\t\t" 
+
+aws ec2 describe-subnets  --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(subnet == 'true'  && create == "Yes" ) {
+                        echo "You select to run SUBNETS"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+ echo ""
+echo -e "SUBNETS:\t\t"   >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+
+aws ec2 describe-subnets  --output table  >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+           
+                            """
+       
+                               }
+                      } 					  
+ 
+
+ if(iamuser == 'true'  && create == "No" ) {
+                        echo "You select to run iamuser"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "IAM USERS:\t\t" 
+
+aws iam list-users --profile default --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(iamuser == 'true'  && create == "Yes" ) {
+                        echo "You select to run iamuser"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "IAM USERS:\t\t"   >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+
+aws iam list-users --profile default --output table  >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+           
+                            """
+       
+                               }
+                      } 
+
+ if(s3b == 'true'  && create == "No" ) {
+                        echo "You select to run s3 bucket"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "S3 BUCKETS:\t\t" 
+
+aws s3 ls --profile default --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(s3b == 'true'  && create == "Yes" ) {
+                        echo "You select to run s3 bucket"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "S3 BUCKETS:\t\t" >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+
+aws s3 ls --profile default --output table >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+           
+                            """
+       
+                               }
+                      } 
+
+ 
+  if(ec2_instance == 'true'  && create == "No" ) {
+                        echo "You select to run ec2_instance"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "EC2:\t\t" 
+
+aws ec2 describe-instances --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(ec2_instance == 'true'  && create == "Yes" ) {
+                        echo "You select to run ec2_instance"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+echo -e "EC2:\t\t" >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+
+aws ec2 describe-instances --output table >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+           
+                            """
+       
+                               }
+                      } 
+ 
+ 
+  if(route53 == 'true'  && create == "No" ) {
+                        echo "You select to run route53"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+
+echo -e "ROUTE 53 HOSTED ZONES:\t\t" 
+
+aws route53 list-hosted-zones --output table
+           
+                        """
+       
+                               }
+                      } 
+ 
+                else if(route53 == 'true'  && create == "Yes" ) {
+                        echo "You select to run route53"
+                               dir("./lesson4") {
+                          
+						    sh """                         
+echo ""
+
+echo -e "ROUTE 53 HOSTED ZONES:\t\t"  >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
+
+aws route53 list-hosted-zones --output table >> jenkins-aws-`date '+%Y|%m|%d-%H'`.log
            
                             """
        
